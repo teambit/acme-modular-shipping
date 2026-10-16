@@ -9,12 +9,55 @@
  */
 
 {
+    "shipping/delivery-options": {
+        "name": "shipping/delivery-options",
+        "scope": "acme-modular.shipping",
+        "version": "faf900a566e46c2173b606f215ad5db3174984da",
+        "mainFile": "index.ts",
+        "rootDir": "shipping/shipping/delivery-options",
+        "onLanesOnly": true,
+        "isAvailableOnCurrentLane": true
+    },
     "shipping/rate-quote": {
         "name": "shipping/rate-quote",
         "scope": "acme-modular.shipping",
-        "version": "0.0.2",
+        "version": "88b6143c8543bebb727264f18ba11df8305df1a7",
         "mainFile": "index.ts",
         "rootDir": "shipping/shipping/rate-quote"
     },
-    "$schema-version": "17.0.0"
+    "shipping/shipment": {
+        "name": "shipping/shipment",
+        "scope": "acme-modular.shipping",
+        "version": "221e39b144e958cec22e519d8cbe0e2855f79ac9",
+        "mainFile": "index.ts",
+        "rootDir": "shipping/shipping/shipment",
+        "onLanesOnly": true,
+        "isAvailableOnCurrentLane": true
+    },
+    "shipping/tracking-timeline": {
+        "name": "shipping/tracking-timeline",
+        "scope": "acme-modular.shipping",
+        "version": "e098dc6cd8d762d57e1b373aced059caf8fea737",
+        "mainFile": "index.ts",
+        "rootDir": "shipping/shipping/tracking-timeline",
+        "onLanesOnly": true,
+        "isAvailableOnCurrentLane": true
+    },
+    "shipping/use-shipment": {
+        "name": "shipping/use-shipment",
+        "scope": "acme-modular.shipping",
+        "version": "e4025d06860ba5f9aab8d9e66028f47456bb7658",
+        "mainFile": "index.ts",
+        "rootDir": "shipping/shipping/use-shipment",
+        "onLanesOnly": true,
+        "isAvailableOnCurrentLane": true
+    },
+    "$schema-version": "17.0.0",
+    "_bit_lane": {
+        "id": {
+            "name": "org-scale-content",
+            "scope": "acme-modular.platform"
+        },
+        "exported": true
+    }
 }
