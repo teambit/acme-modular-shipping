@@ -15,7 +15,7 @@ export type DeliveryOption = {
 };
 
 /** parcels at or above this weight (kg) get standard delivery for free. */
-export const FREE_STANDARD_DELIVERY_MIN_KG = 25;
+export const FREE_STANDARD_DELIVERY_MIN_KG = 20;
 
 // faster services are priced as a multiple of the standard rate quote.
 const services: { id: DeliveryOption['id']; label: string; days: number; factor: number }[] = [

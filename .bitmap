@@ -12,7 +12,7 @@
     "shipping/delivery-options": {
         "name": "shipping/delivery-options",
         "scope": "acme-modular.shipping",
-        "version": "43965f8592f12068390cf7dd321a691fab0fc067",
+        "version": "be2b6441d14d5a67e48566f1e49724e400b7264f",
         "mainFile": "index.ts",
         "rootDir": "shipping/shipping/delivery-options"
     },
