@@ -56,7 +56,7 @@ export function TrackingTimeline({ shipment, className }: TrackingTimelineProps)
       </header>
 
       {timeline.length === 0 ? (
-        <p className={styles.empty}>No scans yet. The carrier will update tracking once it picks up the parcel.</p>
+        <p className={styles.empty}>No scans yet. Tracking starts when the carrier picks up the parcel.</p>
       ) : (
         <ol className={styles.events}>
           {timeline.map((event, index) => (
