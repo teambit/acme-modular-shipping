@@ -33,7 +33,7 @@
     "shipping/tracking-timeline": {
         "name": "shipping/tracking-timeline",
         "scope": "acme-modular.shipping",
-        "version": "0.0.2",
+        "version": "bc9889e38daf025afc628c2b8eea7768d239d91f",
         "mainFile": "index.ts",
         "rootDir": "shipping/shipping/tracking-timeline"
     },
@@ -44,5 +44,12 @@
         "mainFile": "index.ts",
         "rootDir": "shipping/shipping/use-shipment"
     },
-    "$schema-version": "17.0.0"
+    "$schema-version": "17.0.0",
+    "_bit_lane": {
+        "id": {
+            "name": "picked-up-by-carrier",
+            "scope": "acme-modular.shipping"
+        },
+        "exported": true
+    }
 }

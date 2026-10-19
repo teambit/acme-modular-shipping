@@ -11,7 +11,7 @@ export type TrackingTimelineProps = {
 
 const statusLabels: Record<ShipmentStatus, string> = {
   'label-created': 'Label created',
-  'picked-up': 'Picked up',
+  'picked-up': 'Picked up by the carrier',
   'in-transit': 'In transit',
   'out-for-delivery': 'Out for delivery',
   delivered: 'Delivered',
