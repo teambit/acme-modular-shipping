@@ -19,7 +19,7 @@ export const ControlledSelection = () => {
   );
 };
 
-// a standing desk ships at roughly 30 kg across the country.
+// a standing desk ships at roughly 30 kg across the country, so standard delivery is free.
 export const HeavyLongDistance = () => (
   <AcmeTheme>
     <DeliveryOptions weightKg={30} zone={3} value="standard" onChange={() => {}} />

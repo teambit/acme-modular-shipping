@@ -3,7 +3,7 @@ description: 'Standard, express and next-day delivery, priced from the shipping 
 labels: ['react', 'ui', 'shipping', 'delivery', 'checkout']
 ---
 
-`deliveryOptionsFor` prices the three ACME delivery services for a parcel: standard is the `rateQuote` for the weight and zone, express is 1.6 times that and next-day 2.4 times, rounded to whole cents. `DeliveryOptions` renders them as a radio group with a `PriceTag` per option and hands the full option, price included, to `onChange`.
+`deliveryOptionsFor` prices the three ACME delivery services for a parcel: standard is the `rateQuote` for the weight and zone, express is 1.6 times that and next-day 2.4 times, rounded to whole cents. Parcels of 20 kg (`FREE_STANDARD_DELIVERY_KG`) or more get standard delivery for free; express and next-day keep their price. `DeliveryOptions` renders them as a radio group with a `PriceTag` per option and hands the full option, price included, to `onChange`.
 
 ## Pick a delivery service
 
@@ -23,6 +23,9 @@ import { deliveryOptionsFor } from '@acme-modular/shipping.shipping.delivery-opt
 
 deliveryOptionsFor(2, 0);
 // [{ id: 'standard', cents: 790, ... }, { id: 'express', cents: 1264, ... }, { id: 'next-day', cents: 1896, ... }]
+
+deliveryOptionsFor(25, 0)[0].cents;
+// 0 — standard delivery is free from 20 kg
 ```
 
 ## Uncontrolled

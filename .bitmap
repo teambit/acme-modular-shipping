@@ -12,7 +12,7 @@
     "shipping/delivery-options": {
         "name": "shipping/delivery-options",
         "scope": "acme-modular.shipping",
-        "version": "0.0.1",
+        "version": "8363f6fd396489f58af44c3bfb17fb4bed719772",
         "mainFile": "index.ts",
         "rootDir": "shipping/shipping/delivery-options"
     },
@@ -44,5 +44,12 @@
         "mainFile": "index.ts",
         "rootDir": "shipping/shipping/use-shipment"
     },
-    "$schema-version": "17.0.0"
+    "$schema-version": "17.0.0",
+    "_bit_lane": {
+        "id": {
+            "name": "free-standard-delivery-20kg",
+            "scope": "acme-modular.shipping"
+        },
+        "exported": true
+    }
 }

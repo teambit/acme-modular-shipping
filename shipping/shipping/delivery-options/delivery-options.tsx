@@ -21,10 +21,15 @@ const services: { id: DeliveryOption['id']; label: string; days: number; factor:
   { id: 'next-day', label: 'Next day', days: 1, factor: 2.4 },
 ];
 
+/** parcels of this weight (kg) or more get standard delivery for free. */
+export const FREE_STANDARD_DELIVERY_KG = 20;
+
 /**
  * The delivery services for a parcel, cheapest first. Standard is the
  * `rateQuote` for the weight and zone; express costs 1.6 times that and
- * next-day 2.4 times, rounded to whole cents.
+ * next-day 2.4 times, rounded to whole cents. Parcels of
+ * `FREE_STANDARD_DELIVERY_KG` (20 kg) or more get standard delivery for free;
+ * express and next-day keep their price.
  *
  * @param weightKg parcel weight in kilograms.
  * @param zone shipping zone, 0 for local.
@@ -33,7 +38,11 @@ const services: { id: DeliveryOption['id']; label: string; days: number; factor:
  */
 export function deliveryOptionsFor(weightKg: number, zone: number): DeliveryOption[] {
   const standard = new Money(rateQuote(weightKg, zone));
-  return services.map(({ factor, ...service }) => ({ ...service, cents: standard.multiply(factor).amountCents }));
+  const freeStandard = weightKg >= FREE_STANDARD_DELIVERY_KG;
+  return services.map(({ factor, ...service }) => ({
+    ...service,
+    cents: freeStandard && service.id === 'standard' ? 0 : standard.multiply(factor).amountCents,
+  }));
 }
 
 export type DeliveryOptionsProps = {

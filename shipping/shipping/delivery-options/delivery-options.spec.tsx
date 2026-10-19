@@ -16,6 +16,17 @@ it('rounds the multiplied prices to whole cents', () => {
   expect(deliveryOptionsFor(2, 1).map((option) => option.cents)).toEqual([988, 1581, 2371]);
 });
 
+it('makes standard delivery free from 20 kg and keeps the faster services priced', () => {
+  const [standard, express, nextDay] = deliveryOptionsFor(20, 0);
+  expect(standard.cents).toBe(0);
+  expect(express.cents).toBeGreaterThan(0);
+  expect(nextDay.cents).toBeGreaterThan(express.cents);
+});
+
+it('charges standard delivery just under 20 kg', () => {
+  expect(deliveryOptionsFor(19.9, 0)[0].cents).toBeGreaterThan(0);
+});
+
 it('renders a labelled radio per option with its price', () => {
   render(<DeliveryOptions weightKg={2} zone={0} value="express" onChange={() => {}} />);
   expect(screen.getAllByRole('radio')).toHaveLength(3);
