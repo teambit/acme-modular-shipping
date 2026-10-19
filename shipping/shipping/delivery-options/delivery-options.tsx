@@ -22,7 +22,7 @@ const services: { id: DeliveryOption['id']; label: string; days: number; factor:
 ];
 
 /** parcels of this weight (kg) or more get standard delivery for free. */
-export const FREE_STANDARD_DELIVERY_KG = 20;
+export const FREE_STANDARD_DELIVERY_KG = 25;
 
 /**
  * The delivery services for a parcel, cheapest first. Standard is the
